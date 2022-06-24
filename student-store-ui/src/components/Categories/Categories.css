@@ -1,0 +1,16 @@
+.categories {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+}
+
+.categorie {
+    font-weight: 400;
+}
+
+.categorie:hover {
+    color: #4EBBCC;
+    cursor: pointer;
+}

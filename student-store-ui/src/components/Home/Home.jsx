@@ -3,6 +3,7 @@ import "./Home.css";
 import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import SearchBar from "../SearchBar/SearchBar";
+import Categories from "../Categories/Categories";
 
 export default function Home({
   products,
@@ -15,6 +16,7 @@ export default function Home({
     <div className="home">
       <Hero />
       <SearchBar />
+      <Categories />
       <ProductGrid
         products={products}
         shoppingCart={shoppingCart}
