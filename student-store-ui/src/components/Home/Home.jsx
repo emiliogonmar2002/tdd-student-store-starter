@@ -11,17 +11,25 @@ export default function Home({
   handleAddItemToCart,
   handleRemoveItemFromCart,
   handleOnSubmitCheckoutForm,
+  categorie,
+  setCategorie,
+  handleSetCategorie,
 }) {
   return (
     <div className="home">
       <Hero />
       <SearchBar />
-      <Categories />
+      <Categories
+        categorie={categorie}
+        handleSetCategorie={handleSetCategorie}
+      />
       <ProductGrid
         products={products}
         shoppingCart={shoppingCart}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}
+        categorie={categorie}
+        setCategorie={setCategorie}
       />
     </div>
   );

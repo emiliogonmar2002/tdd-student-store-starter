@@ -13,11 +13,13 @@ import NotFound from "../NotFound/NotFound";
 
 export default function App() {
   const [products, setProducts] = useState([{}]);
+  const [productsAPI, setProductsAPI] = useState([{}]);
   const [isFetching, setIsFetching] = useState(false);
   const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
   const [isOpen, setIsOpen] = useState(true);
+  const [categorie, setCategorie] = useState("");
 
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({
@@ -56,13 +58,15 @@ export default function App() {
 
   const handleRemoveItemFromCart = (product) => {
     for (let i = 0; i < shoppingCart.length; i++) {
-      if (shoppingCart[i].id == product.id) {
+      if (shoppingCart[i].itemId == product.id) {
         if (shoppingCart[i].quantity > 1) {
           shoppingCart[i].quantity -= 1;
+          product.quantity -= 1;
           setShoppingCart((shoppingCart) => [...shoppingCart]);
           return;
         }
         shoppingCart[i].quantity -= 1;
+        product.quantity -= 1;
         shoppingCart.splice(i, 1);
         setShoppingCart((shoppingCart) => [...shoppingCart]);
         return;
@@ -121,6 +125,17 @@ export default function App() {
     }
   };
 
+  const handleSetCategorie = (value) => {
+    setCategorie(value);
+
+    if (value != "") {
+      console.log(value);
+      setProducts(productsAPI.filter((product) => product.category == value));
+    } else {
+      setProducts(productsAPI);
+    }
+  };
+
   // Fetching
 
   useEffect(() => {
@@ -133,6 +148,7 @@ export default function App() {
     try {
       const response = await axios.get(API_URL + "/store");
 
+      setProductsAPI(response.data.products);
       setProducts(response.data.products);
     } catch (error) {
       console.error("Server error");
@@ -172,6 +188,9 @@ export default function App() {
                       handleAddItemToCart={handleAddItemToCart}
                       handleRemoveItemFromCart={handleRemoveItemFromCart}
                       handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                      categorie={categorie}
+                      setCategorie={setCategorie}
+                      handleSetCategorie={handleSetCategorie}
                     />
                   }
                 />

@@ -14,3 +14,7 @@
     color: #4EBBCC;
     cursor: pointer;
 }
+
+.selected {
+    color: #4EBBCC;
+}

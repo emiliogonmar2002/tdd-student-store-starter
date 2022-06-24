@@ -1,24 +1,19 @@
 import React from "react";
 import "./Categories.css";
+import { categories } from "../../../utils/constants";
 
-const Categories = () => {
+const Categories = ({ categorie, handleSetCategorie }) => {
   return (
     <div className="categories">
-      <h2 className="categorie" value="">
-        All categories
-      </h2>
-      <h2 className="categorie" value="food">
-        Food
-      </h2>
-      <h2 className="categorie" value="clothing">
-        Clothing
-      </h2>
-      <h2 className="categorie" value="accessories">
-        Accessories
-      </h2>
-      <h2 className="categorie" value="tech">
-        Tech
-      </h2>
+      {categories.map((cat) => (
+        <h2
+          className={`categorie ${categorie == cat.value ? "selected" : ""}`}
+          value={cat.value}
+          onClick={() => handleSetCategorie(cat.value)}
+        >
+          {cat.label}
+        </h2>
+      ))}
     </div>
   );
 };
