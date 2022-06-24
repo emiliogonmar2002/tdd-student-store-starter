@@ -45,7 +45,6 @@ export default function App() {
     const newObject = {
       itemId: product.id,
       name: product.name,
-      description: product.description,
       quantity: 1,
       price: product.price,
     };
