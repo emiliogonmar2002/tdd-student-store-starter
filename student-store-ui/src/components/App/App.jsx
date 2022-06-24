@@ -132,7 +132,6 @@ export default function App() {
     setCategorie(value);
 
     if (value != "") {
-      console.log(value);
       setProducts(productsAPI.filter((product) => product.category == value));
     } else {
       setProducts(productsAPI);
