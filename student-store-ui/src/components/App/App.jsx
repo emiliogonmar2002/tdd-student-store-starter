@@ -20,6 +20,7 @@ export default function App() {
   const [successMsg, setSuccessMsg] = useState("");
   const [isOpen, setIsOpen] = useState(true);
   const [categorie, setCategorie] = useState("");
+  const [search, setSearch] = useState("");
 
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({
@@ -89,11 +90,13 @@ export default function App() {
 
     try {
       if (checkoutForm.email == "" || checkoutForm.name == "") {
+        setSuccessMsg("");
         setError("You need to complete the information");
         setIsFetchingCheckoutForm(false);
         return;
       }
       if (shoppingCart.length == 0) {
+        setSuccessMsg("");
         setError("You need to select at least one item");
         setIsFetchingCheckoutForm(false);
         return;
@@ -134,6 +137,15 @@ export default function App() {
     } else {
       setProducts(productsAPI);
     }
+  };
+
+  const handleOnChangeSearchBar = (value) => {
+    setSearch(value);
+    setProducts(
+      productsAPI.filter((product) =>
+        product.name.toLowerCase().includes(value.toLowerCase())
+      )
+    );
   };
 
   // Fetching
@@ -191,6 +203,8 @@ export default function App() {
                       categorie={categorie}
                       setCategorie={setCategorie}
                       handleSetCategorie={handleSetCategorie}
+                      handleOnChangeSearchBar={handleOnChangeSearchBar}
+                      search={search}
                     />
                   }
                 />

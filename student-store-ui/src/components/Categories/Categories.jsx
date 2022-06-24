@@ -1,10 +1,12 @@
 import React from "react";
 import "./Categories.css";
 import { categories } from "../../../utils/constants";
+import { MdSort } from "react-icons/md";
 
 const Categories = ({ categorie, handleSetCategorie }) => {
   return (
     <div className="categories">
+      <MdSort />
       {categories.map((cat) => (
         <h2
           className={`categorie ${categorie == cat.value ? "selected" : ""}`}

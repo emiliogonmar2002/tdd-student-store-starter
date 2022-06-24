@@ -14,14 +14,17 @@ export default function Home({
   categorie,
   setCategorie,
   handleSetCategorie,
+  handleOnChangeSearchBar,
+  search,
 }) {
   return (
     <div className="home">
       <Hero />
-      <SearchBar />
+      <SearchBar handleOnChangeSearchBar={handleOnChangeSearchBar} />
       <Categories
         categorie={categorie}
         handleSetCategorie={handleSetCategorie}
+        search={search}
       />
       <ProductGrid
         products={products}
