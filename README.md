@@ -90,8 +90,8 @@ The following specifications were met on the Express backend and the React front
             - [x] Each property should be set to the correct value found in the `checkoutForm`
           - [x] The `shoppingCart` field:
             - [x] Should contain the user's order formatted as an array of objects.
-            - [ ] Each object in the array should have two fields:
-              - [ ] The `itemId` field should store the `id` of the item being purchased.
+            - [x] Each object in the array should have two fields:
+              - [x] The `itemId` field should store the `id` of the item being purchased.
               - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
             - [x] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
 
@@ -137,25 +137,25 @@ The following specifications were met on the Express backend and the React front
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
   - [x] Should define **at least** a `product` state variable and updater
-  - [ ] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
-  - [ ] When the component is mounted to the screen...
-    - [ ] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
-    - [ ] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
-    - [ ] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
-    - [ ] It should store the `product` received by the request in state and then render the `ProductView` component.
-    - [ ] If no `product` is found with that `id`, it should render the `NotFound` component
+  - [x] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
+  - [x] When the component is mounted to the screen...
+    - [x] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
+    - [x] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
+    - [x] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
+    - [x] It should store the `product` received by the request in state and then render the `ProductView` component.
+    - [x] If no `product` is found with that `id`, it should render the `NotFound` component
 
 **ProductView.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
+  - [x] Should accept **at least** the following props:
     - `product` - the `product` object returned by the API request
     - `productId` - the id of the product extracted from the url
     - `quantity` - the quantity for this product found in the `shoppingCart`
     - `handleAddItemToCart` - handler function
     - `handleRemoveItemToCart` - handler function
-  - [ ] It should display an `h1` element with the `className` of `product-id` that contains the text: `Product #` followed by the `productId` prop
-  - [ ] It should render a `ProductCard` component and pass it the props it needs. It should also set the `showDescription` prop to `true` for this product card.
+  - [x] It should display an `h1` element with the `className` of `product-id` that contains the text: `Product #` followed by the `productId` prop
+  - [x] It should render a `ProductCard` component and pass it the props it needs. It should also set the `showDescription` prop to `true` for this product card.
 
 **ProductCard.jsx**
 
@@ -182,8 +182,8 @@ The following specifications were met on the Express backend and the React front
 
 **Sidebar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
-  - [ ] Should accept **at least** the following props (and probably a few more):
+  - [x] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
+  - [x] Should accept **at least** the following props (and probably a few more):
     - `isOpen` - boolean representing the open/closed state of the Sidebar
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
     - `products` - the array of products fetched from the API
@@ -191,36 +191,36 @@ The following specifications were met on the Express backend and the React front
     - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm` object
     - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
     - `handleOnToggle` - handler function to toggle open/closed `Sidebar` state
-  - [ ] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
-  - [ ] When the sidebar is opened, it should display the `ShoppingCart` and `CheckoutForm` components and should be wider than `350px`.
-  - [ ] When the sidebar is closed, it should only render the toggle button and shouldn't be wider than `150px`.
+  - [x] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
+  - [x] When the sidebar is opened, it should display the `ShoppingCart` and `CheckoutForm` components and should be wider than `350px`.
+  - [x] When the sidebar is closed, it should only render the toggle button and shouldn't be wider than `150px`.
 
 **ShoppingCart.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
-  - [ ] Should accept **at least** the following props (and probably a few more):
+  - [x] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
+  - [x] Should accept **at least** the following props (and probably a few more):
     - `isOpen` - boolean representing the open/closed state of the Sidebar
     - `products` - the array of products fetched from the API
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
-  - [ ] For every item in the `shoppingCart`:
-    - [ ] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
-    - [ ] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
-  - [ ] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
-  - [ ] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
-  - [ ] If no items exist in the `shoppingCart`, it should render this message: `"No items added to cart yet. Start shopping now!"` inside an element with the `className` of `notification`
+  - [x] For every item in the `shoppingCart`:
+    - [x] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
+    - [x] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
+  - [x] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
+  - [x] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
+  - [x] If no items exist in the `shoppingCart`, it should render this message: `"No items added to cart yet. Start shopping now!"` inside an element with the `className` of `notification`
 
 **CheckoutForm.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with the `className` of `checkout-form`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with the `className` of `checkout-form`
+  - [x] Should accept **at least** the following props:
     - `isOpen` - boolean
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
     - `checkoutForm` - the form state for the `CheckoutForm` component
     - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm`
     - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
-  - [ ] Should render two `input` elements, each with the `className` of `checkout-form-input`
-    - [ ] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
-      - [ ] The first input should have:
+  - [x] Should render two `input` elements, each with the `className` of `checkout-form-input`
+    - [x] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
+      - [x] The first input should have:
         - [ ] the `type` prop set to `email`
         - [ ] the `name` prop set to `email`
         - [ ] the `placeholder` prop set to `student@codepath.org`
