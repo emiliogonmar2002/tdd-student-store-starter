@@ -1,16 +1,28 @@
-import React from 'react'
-import "./ProductDetail.css"
+import React from "react";
+import "./ProductDetail.css";
+import ProductCard from "../Product Card/ProductCard";
 
-const ProductDetail = ({product, handleAddItemToCart, handleRemoveItemFromCart}) => {
+const ProductDetail = ({
+  product,
+  productId,
+  quantity,
+  handleAddItemToCart,
+  handleRemoveItemFromCart,
+}) => {
   return (
-    <div className='product-detail'>
-
-      <div className='buttons'>
-        <button title="Remove" id="removeButton" onClick={() => handleRemoveItemFromCart(product)}>-</button>
-        <button title="Add" id="addButton" onClick={() => handleAddItemToCart(product)}>+</button>
-      </div>
+    <div className="product-view">
+      <h1 className="product-id">Product #{productId}</h1>
+      {console.log("si", product)}
+      <ProductCard
+        product={product}
+        productId={productId}
+        quantity={quantity}
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+        showDescription
+      />
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;

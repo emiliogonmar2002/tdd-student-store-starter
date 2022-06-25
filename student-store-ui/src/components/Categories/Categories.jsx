@@ -7,14 +7,16 @@ const Categories = ({ categorie, handleSetCategorie }) => {
   return (
     <div className="categories">
       <MdSort />
-      {categories.map((cat) => (
-        <h2
-          className={`categorie ${categorie == cat.value ? "selected" : ""}`}
-          value={cat.value}
-          onClick={() => handleSetCategorie(cat.value)}
-        >
-          {cat.label}
-        </h2>
+      {categories.map((cat, index) => (
+        <React.Fragment key={index}>
+          <h2
+            className={`categorie ${categorie == cat.value ? "selected" : ""}`}
+            value={cat.value}
+            onClick={() => handleSetCategorie(cat.value)}
+          >
+            {cat.label}
+          </h2>
+        </React.Fragment>
       ))}
     </div>
   );

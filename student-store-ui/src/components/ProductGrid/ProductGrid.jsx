@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "../Product Card/ProductCard";
+import ProductView from "../ProductView/ProductView";
 import "./ProductGrid.css";
 
 const ProductGrid = ({

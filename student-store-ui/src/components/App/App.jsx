@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../../utils/constants";
+import ProductView from "../ProductView/ProductView";
 import axios from "axios";
 
 // Components
@@ -208,11 +209,12 @@ export default function App() {
                   }
                 />
                 <Route
-                  path="/product/:productsId"
+                  path="/products/:productId"
                   element={
-                    <ProductDetail
-                      products={products}
+                    <ProductView
                       shoppingCart={shoppingCart}
+                      handleAddItemToCart={handleAddItemToCart}
+                      handleRemoveItemFromCart={handleRemoveItemFromCart}
                     />
                   }
                 />
