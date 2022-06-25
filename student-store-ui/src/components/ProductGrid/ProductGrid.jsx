@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "../Product Card/ProductCard";
+import ProductView from "../ProductView/ProductView";
 import "./ProductGrid.css";
 
 const ProductGrid = ({
@@ -20,7 +21,7 @@ const ProductGrid = ({
                 product={product}
                 productId={product.id}
                 quantity={product.quantity}
-                showDescription={true}
+                showDescription={false}
                 handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
               />

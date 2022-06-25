@@ -1,6 +1,5 @@
 import React from "react";
 import "./ProductCard.css";
-import ProductDetail from "../ProductDetail/ProductDetail";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({
@@ -21,11 +20,24 @@ const ProductCard = ({
       <hr />
       <p className="product-price">{`$${product.price}`}</p>
       <hr />
-      <ProductDetail
-        product={product}
-        handleAddItemToCart={handleAddItemToCart}
-        handleRemoveItemFromCart={handleRemoveItemFromCart}
-      />
+      <div className="buttons">
+        <button
+          title="Remove"
+          id="removeButton"
+          className="button"
+          onClick={() => handleRemoveItemFromCart(product)}
+        >
+          -
+        </button>
+        <button
+          title="Add"
+          id="addButton"
+          className="button"
+          onClick={() => handleAddItemToCart(product)}
+        >
+          +
+        </button>
+      </div>
       {quantity > 0 && (
         <div
           title={`You have ${quantity} ${product.name} in your shopping cart!`}

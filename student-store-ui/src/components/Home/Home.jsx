@@ -18,7 +18,7 @@ export default function Home({
   search,
 }) {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <Hero />
       <SearchBar handleOnChangeSearchBar={handleOnChangeSearchBar} />
       <Categories
