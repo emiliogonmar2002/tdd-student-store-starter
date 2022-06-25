@@ -10,9 +10,8 @@ const ProductDetail = ({
   handleRemoveItemFromCart,
 }) => {
   return (
-    <div className="product-view">
+    <div className="product-detail">
       <h1 className="product-id">Product #{productId}</h1>
-      {console.log("si", product)}
       <ProductCard
         product={product}
         productId={productId}

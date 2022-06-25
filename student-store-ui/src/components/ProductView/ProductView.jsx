@@ -7,7 +7,7 @@ import "./ProductView.css";
 
 const ProductView = ({
   handleAddItemToCart,
-  handleRemoveItemToCart,
+  handleRemoveItemFromCart,
   shoppingCart,
 }) => {
   const { productId } = useParams();
@@ -44,7 +44,7 @@ const ProductView = ({
           productId={product.id}
           quantity={product.quantity}
           handleAddItemToCart={handleAddItemToCart}
-          handleRemoveItemToCart={handleRemoveItemToCart}
+          handleRemoveItemFromCart={handleRemoveItemFromCart}
         />
       </div>
     );
