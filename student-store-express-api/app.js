@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const Store = require("./models/store");
 const app = express();
 
 app.use(morgan("tiny"))
@@ -10,6 +11,12 @@ app.use(express.json());
 app.get("/", (_req, res) => {
     res.status(200).json({
         "ping" : "pong"
+    })
+})
+
+app.get("/store", (_req, res) => {
+    res.status(200).json({
+        products: Store.listProducts()
     })
 })
 
