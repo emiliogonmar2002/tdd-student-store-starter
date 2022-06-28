@@ -145,20 +145,5 @@
       "price": 999.99
     }
   ],
-  "purchases": [
-    {
-      "id": 1,
-      "name": "name",
-      "email": "email",
-      "order": [
-        {
-          "itemId": "1",
-          "quantity": 1
-        }
-      ],
-      "total": 1.076625,
-      "createdAt": "Tue Jun 28 2022 09:47:05 GMT-0700 (Pacific Daylight Time)",
-      "receipt": "Receipt #1, by user: name. Total price: $1.076625"
-    }
-  ]
+  "purchases": []
 }

@@ -1,6 +1,5 @@
 const express = require("express");
 const morgan = require("morgan");
-const Store = require("./models/store");
 const app = express();
 
 app.use(morgan("tiny"))
