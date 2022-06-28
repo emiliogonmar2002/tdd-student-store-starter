@@ -12,7 +12,7 @@ class BadRequestError extends ExpressError {
     }
 }
 
-module.exports - {
+module.exports = {
     ExpressError,
     BadRequestError
 }

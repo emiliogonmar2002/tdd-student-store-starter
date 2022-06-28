@@ -25,18 +25,25 @@ class Store {
     } ) {
         try {
             // Check if undefined
-            if (!shoppingCart || !user) throw new BadRequestError();
+            if (!shoppingCart || !user) throw new BadRequestError("Post needs shopping cart and user");
+
+            // Check if it has all the correct info
+            shoppingCart.map( (item, index) => {
+                let { quantity, itemId } = shoppingCart[index];
+                if (!quantity || !itemId) throw new BadRequestError("Post needs itemId and quantity"); // Error 400
+            })
 
             // Find duplicates
             const valuesSet = new Set(shoppingCart.map(value => value.itemId));
-            if (valuesSet.size !== shoppingCart.length) throw new BadRequestError(); // Error 400
+
+            if (valuesSet.size < shoppingCart.length) throw new BadRequestError("Duplicated values!"); // Error 400
 
             // Calculate total
-            const total = 0;
-            shoppingCart.map(() => {
-                const { quantity, itemId } = shoppingCart[i];
-            if (!quantity || !itemId) throw new BadRequestError(); // Error 400
-
+            let total = 0;
+            shoppingCart.map((item, index) => {
+                console.log(Store.fetchProduct(shoppingCart[index].itemId).price)
+                console.log(shoppingCart[index].quantity)
+                total += shoppingCart[index].quantity * Store.fetchProduct(shoppingCart[index].itemId).price;
             })
 
             // Add taxes
@@ -53,7 +60,7 @@ class Store {
              receipt: `Receipt #${storage.get("purchases").value().length + 1}, by user: ${user.name}. Total price: $${total}`
             }
 
-            storage.get("purchases").push(purchase);
+            storage.get("purchases").push(purchase).write();
             return purchase;
         } catch (error) {
             throw new BadRequestError(error);
