@@ -20,6 +20,13 @@ app.get("/store", (_req, res) => {
     })
 })
 
+app.get("/store/:productId", (req, res) => {
+    const {productId} = req.params;
+    res.json({
+        product: Store.fetchProduct(productId)
+    })
+})
+
 // Error handlers
 
 app.use((error, _req, res, _next) => {
