@@ -41,8 +41,6 @@ class Store {
             // Calculate total
             let total = 0;
             shoppingCart.map((item, index) => {
-                console.log(Store.fetchProduct(shoppingCart[index].itemId).price)
-                console.log(shoppingCart[index].quantity)
                 total += shoppingCart[index].quantity * Store.fetchProduct(shoppingCart[index].itemId).price;
             })
 

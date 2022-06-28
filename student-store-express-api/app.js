@@ -1,6 +1,5 @@
 const express = require("express");
 const morgan = require("morgan");
-const Store = require("./models/store");
 const app = express();
 
 app.use(morgan("tiny"))
@@ -14,31 +13,9 @@ app.get("/", (_req, res) => {
     })
 })
 
-app.get("/store", (_req, res) => {
-    res.status(200).json({
-        products: Store.listProducts()
-    })
-})
+// Routes
 
-app.get("/store/:productId", (req, res) => {
-    const {productId} = req.params;
-    res.json({
-        product: Store.fetchProduct(productId)
-    })
-})
-
-app.post("/store", (req, res) => {
-    const { shoppingCart, user } = req.body;
-
-    const purchase = Store.createOrder( {
-        user,
-        shoppingCart
-    } );
-
-    res.status(201).json({
-        purchase
-    })
-})
+app.use("/store", require("./routes/store.routes"));
 
 // Error handlers
 
