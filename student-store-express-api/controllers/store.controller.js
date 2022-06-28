@@ -3,20 +3,20 @@ controller = {}
 // Model
 const Store = require("../models/store");
 
-app.get("/store", (_req, res) => {
+controller.getProducts = (_req, res) => {
     res.status(200).json({
         products: Store.listProducts()
     })
-})
+}
 
-app.get("/store/:productId", (req, res) => {
+controller.getProduct = (req, res) => {
     const {productId} = req.params;
     res.json({
         product: Store.fetchProduct(productId)
     })
-})
+}
 
-app.post("/store", (req, res) => {
+controller.createOrder = (req, res) => {
     const { shoppingCart, user } = req.body;
 
     const purchase = Store.createOrder( {
@@ -27,6 +27,6 @@ app.post("/store", (req, res) => {
     res.status(201).json({
         purchase
     })
-})
+}
 
 module.exports = controller;
