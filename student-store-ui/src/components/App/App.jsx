@@ -9,6 +9,7 @@ import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
+import OrdersView from "../OrdersView/OrdersView";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
@@ -212,6 +213,7 @@ export default function App() {
                     />
                   }
                 />
+                <Route path="/orders" element={<OrdersView />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             )}
