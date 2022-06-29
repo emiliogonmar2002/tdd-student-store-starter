@@ -8,6 +8,7 @@ const ProductDetail = ({
   quantity,
   handleAddItemToCart,
   handleRemoveItemFromCart,
+  shoppingCart,
 }) => {
   return (
     <div className="product-detail">
@@ -19,6 +20,7 @@ const ProductDetail = ({
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}
         showDescription
+        shoppingCart={shoppingCart}
       />
     </div>
   );

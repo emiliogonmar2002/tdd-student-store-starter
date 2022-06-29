@@ -8,6 +8,7 @@ const ProductCard = ({
   showDescription,
   handleAddItemToCart,
   handleRemoveItemFromCart,
+  shoppingCart,
 }) => (
   <div className="product-card">
     <div className="media" title={`Go to ${product.name}`}>
@@ -33,7 +34,11 @@ const ProductCard = ({
           title={`You have ${quantity} ${product.name} in your shopping cart!`}
           className="product-quantity"
         >
-          {quantity}
+          {shoppingCart.find((productCart) => productCart.itemId == product.id)
+            ? shoppingCart.find(
+                (productCart) => productCart.itemId == product.id
+              ).quantity
+            : 0}
         </div>
       )}
       <button

@@ -42,9 +42,15 @@ const ProductView = ({
         <ProductDetail
           product={product}
           productId={product.id}
-          quantity={product.quantity}
+          quantity={
+            shoppingCart.find((product) => product.itemId == productId)
+              ? shoppingCart.find((product) => product.itemId == productId)
+                  .quantity
+              : 0
+          }
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemFromCart={handleRemoveItemFromCart}
+          shoppingCart={shoppingCart}
         />
       </div>
     );
