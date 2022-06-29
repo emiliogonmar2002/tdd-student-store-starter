@@ -10,7 +10,6 @@ export default function Home({
   shoppingCart,
   handleAddItemToCart,
   handleRemoveItemFromCart,
-  handleOnSubmitCheckoutForm,
   categorie,
   setCategorie,
   handleSetCategorie,

@@ -9,7 +9,6 @@ import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
-import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
@@ -78,12 +77,8 @@ export default function App() {
 
   const handleCheckoutFormChange = (name, value) => {
     const prev = checkoutForm;
-    const _new = {
-      ...prev,
-      [name]: value,
-    };
 
-    setCheckoutForm(_new);
+    setCheckoutForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleOnSubmitCheckoutForm = async () => {
@@ -174,7 +169,6 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <div className="main">
             <Sidebar

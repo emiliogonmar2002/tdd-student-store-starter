@@ -1,4 +1,4 @@
-export const API_URL = "https://codepath-store-api.herokuapp.com"
+export const API_URL = "http://localhost:3001"
 
 export const categories = [
     {label: "All Categories", value:""},
