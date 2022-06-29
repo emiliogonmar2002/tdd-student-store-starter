@@ -1,7 +1,7 @@
-controller = {}
-
 // Model
 const Store = require("../models/store");
+
+controller = {}
 
 controller.getProducts = (_req, res) => {
     res.status(200).json({
