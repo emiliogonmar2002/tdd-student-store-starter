@@ -4,6 +4,9 @@ import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import SearchBar from "../SearchBar/SearchBar";
 import Categories from "../Categories/Categories";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 
 export default function Home({
   products,
@@ -33,6 +36,9 @@ export default function Home({
         category={category}
         setCategory={setCategory}
       />
+      <About />
+      <Contact />
+      <Footer />
     </div>
   );
 }

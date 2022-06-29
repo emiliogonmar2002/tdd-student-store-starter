@@ -1,0 +1,37 @@
+.contact {
+    margin-top: 50px;
+    background-color: #ADF4FF;
+    height: 400px;
+    display: flex;
+    text-align: end;
+    align-items: center;
+}
+
+.contact-intro {
+    font-size: 40px;
+    margin: auto 0 auto 0;
+}
+
+.contact-intro h1 {
+    margin-bottom: 10px;
+}
+
+.contact hr {
+    width: 180px;
+    height: 5px;
+    background-color: #292929;
+    border: none;
+}
+
+.contact-intro span {
+    color: #307580;
+}
+
+.contact-intro p{
+    width: 800px;
+    font-size: 18px;
+}
+
+.contact-icon {
+    margin-left: 200px;
+}
