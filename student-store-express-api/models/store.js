@@ -64,6 +64,14 @@ class Store {
             throw new BadRequestError(error);
         }
     }
+
+    static listOrder() {
+        try {
+            return storage.get("purchases").value();
+        } catch (error) {
+            throw new BadRequestError(error);
+        }
+    }
 }
 
 module.exports = Store;
