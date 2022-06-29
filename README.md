@@ -28,7 +28,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 - [x] User can click in the top navigation bar to scroll to the relevant section.
 - [x] User sees a "not found" display when searching for a nonexistent product.
-- [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
+- [x] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 
@@ -66,14 +66,14 @@ The following specifications were met on the Express backend and the React front
             it should create an error message and store it in the `error` state variable.
   - [x] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
     - [x] Define as many as are needed.
-    - [ ] At minimum, **create these five handlers**:
+    - [x] At minimum, **create these five handlers**:
       - [x] The **`handleOnToggle`** function. When called...
         - [x] It should toggle the open/closed state of the `Sidebar`.
-      - [ ] The **`handleAddItemToCart`** function. When called...
+      - [x] The **`handleAddItemToCart`** function. When called...
         - [x] It should accept a single argument - `productId`
         - [x] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
         - [x] If it does exist, it should increase the quantity by `1`.
-        - [ ] It should add the price of the product to the total price of the `shoppingCart`.
+        - [x] It should add the price of the product to the total price of the `shoppingCart`.
       - [x] The **`handleRemoveItemFromCart`** function. When called...
         - [x] It should accept a single argument - `productId`
         - [x] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
