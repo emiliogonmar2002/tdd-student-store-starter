@@ -28,6 +28,14 @@ const ProductCard = ({
       >
         -
       </button>
+      {quantity > 0 && (
+        <div
+          title={`You have ${quantity} ${product.name} in your shopping cart!`}
+          className="product-quantity"
+        >
+          {quantity}
+        </div>
+      )}
       <button
         title="Add"
         id="addButton"
@@ -37,14 +45,6 @@ const ProductCard = ({
         +
       </button>
     </div>
-    {quantity > 0 && (
-      <div
-        title={`You have ${quantity} ${product.name} in your shopping cart!`}
-        className="product-quantity"
-      >
-        {`- ${quantity} -`}
-      </div>
-    )}
     {showDescription && (
       <div className="product-description">
         <p>{product.description}</p>
