@@ -1,10 +1,13 @@
 import React from "react";
+import { useMemo } from "react";
 import "./ShoppingCart.css";
 
-const ShoppingCart = ({ isOpen, products, shoppingCart }) => {
-  const subtotal = shoppingCart
-    .reduce((prev, curr) => prev + curr.price * curr.quantity, 0)
-    .toFixed(2);
+const ShoppingCart = ({ isOpen, shoppingCart }) => {
+  const subtotal = useMemo(() => {
+    return shoppingCart
+      .reduce((prev, curr) => prev + curr.price * curr.quantity, 0)
+      .toFixed(2);
+  }, [shoppingCart]);
 
   const open = (
     <>

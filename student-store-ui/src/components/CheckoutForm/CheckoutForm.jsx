@@ -3,14 +3,13 @@ import "./CheckoutForm.css";
 
 const CheckOutForm = ({
   isOpen,
-  shoppingCart,
   checkoutForm,
   handleCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   error,
   successMsg,
 }) => {
-  const open = (
+  const openedSidebar = (
     <div className="checkout-form">
       <h2 className="checkout-form-title">Payment Info</h2>
       <input
@@ -40,9 +39,9 @@ const CheckOutForm = ({
     </div>
   );
 
-  const close = <></>;
+  const closedSidebar = <></>;
 
-  return <>{isOpen ? open : close}</>;
+  return <>{isOpen ? openedSidebar : closedSidebar}</>;
 };
 
 export default CheckOutForm;
