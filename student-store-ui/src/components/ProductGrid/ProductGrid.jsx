@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "../Product Card/ProductCard";
-import { categories } from "../../../utils/constants";
+import { CATEGORIES } from "../../../utils/constants";
 import ProductView from "../ProductView/ProductView";
 import "./ProductGrid.css";
 
@@ -15,7 +15,7 @@ const ProductGrid = ({
       <div className="product-grid-title">
         <h2>
           {
-            categories.find((categoryItem) => categoryItem.value == category)
+            CATEGORIES.find((categoryItem) => categoryItem.value == category)
               .label
           }
         </h2>

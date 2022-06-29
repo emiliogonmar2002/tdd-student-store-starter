@@ -1,13 +1,13 @@
 import React from "react";
 import "./Categories.css";
-import { categories } from "../../../utils/constants";
+import { CATEGORIES } from "../../../utils/constants";
 import { MdSort } from "react-icons/md";
 
 const Categories = ({ category, handleSetCategory }) => {
   return (
     <div className="categories">
       <MdSort />
-      {categories.map((cat, index) => (
+      {CATEGORIES.map((cat, index) => (
         <React.Fragment key={index}>
           <h2
             className={`category ${category == cat.value ? "selected" : ""}`}
