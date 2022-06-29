@@ -11,4 +11,15 @@
 
 .closed {
     width: 60px;
+    display: flex;
+
+}
+
+.shopping-icon {
+    transition: transform ease-out 200ms;
+    cursor: pointer;
+}
+
+.icon-open {
+    transform: rotateY(180deg);
 }
