@@ -6,11 +6,11 @@
     margin-bottom: 50px;
 }
 
-.categorie {
+.category {
     font-weight: 400;
 }
 
-.categorie:hover {
+.category:hover {
     color: #4EBBCC;
     cursor: pointer;
 }

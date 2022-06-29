@@ -30,13 +30,7 @@ const ShoppingCart = ({ isOpen, shoppingCart }) => {
     </>
   );
 
-  const close = (
-    <>
-      <p className="notification">
-        No items added to cart yet. Start shopping now!
-      </p>
-    </>
-  );
+  const close = <></>;
 
   return <div className="shopping-cart">{isOpen ? open : close}</div>;
 };

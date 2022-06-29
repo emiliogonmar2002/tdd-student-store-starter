@@ -8,14 +8,14 @@ const ProductGrid = ({
   products,
   handleAddItemToCart,
   handleRemoveItemFromCart,
-  categorie,
+  category,
 }) => {
   return (
     <div className="product-grid" id="Buy">
       <div className="product-grid-title">
         <h2>
           {
-            categories.find((categorieItem) => categorieItem.value == categorie)
+            categories.find((categoryItem) => categoryItem.value == category)
               .label
           }
         </h2>

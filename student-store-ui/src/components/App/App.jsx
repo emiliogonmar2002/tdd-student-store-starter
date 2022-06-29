@@ -19,7 +19,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
   const [isOpen, setIsOpen] = useState(true);
-  const [categorie, setCategorie] = useState("");
+  const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
 
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -124,8 +124,8 @@ export default function App() {
     }
   };
 
-  const handleSetCategorie = (value) => {
-    setCategorie(value);
+  const handleSetCategory = (value) => {
+    setCategory(value);
 
     if (value != "") {
       setProducts(productsAPI.filter((product) => product.category == value));
@@ -194,9 +194,9 @@ export default function App() {
                       handleAddItemToCart={handleAddItemToCart}
                       handleRemoveItemFromCart={handleRemoveItemFromCart}
                       handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-                      categorie={categorie}
-                      setCategorie={setCategorie}
-                      handleSetCategorie={handleSetCategorie}
+                      category={category}
+                      setCategory={setCategory}
+                      handleSetCategory={handleSetCategory}
                       handleOnChangeSearchBar={handleOnChangeSearchBar}
                       search={search}
                     />
