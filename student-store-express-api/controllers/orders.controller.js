@@ -9,4 +9,12 @@ controller.getOrders = (_req, res) => {
     })
 };
 
+controller.getOrder = (req, res) => {
+    const { orderId } = req.params;
+    console.log("Hola")
+    res.status(200).json({
+        orders: Store.fetchOrder(orderId)
+    })
+};
+
 module.exports = controller;
