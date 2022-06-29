@@ -65,7 +65,7 @@ class Store {
         }
     }
 
-    static listOrder() {
+    static listOrders() {
         try {
             return storage.get("purchases").value();
         } catch (error) {

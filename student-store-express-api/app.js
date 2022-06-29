@@ -21,6 +21,7 @@ app.get("/", (_req, res) => {
 // Routes
 
 app.use("/store", require("./routes/store.routes"));
+app.use("/orders", require("./routes/orders.routes"));
 
 // Error handlers
 
