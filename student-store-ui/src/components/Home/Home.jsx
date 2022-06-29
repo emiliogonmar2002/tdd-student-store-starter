@@ -5,6 +5,7 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import SearchBar from "../SearchBar/SearchBar";
 import Categories from "../Categories/Categories";
 import About from "../About/About";
+import Contact from "../Contact/Contact";
 
 export default function Home({
   products,
@@ -35,6 +36,7 @@ export default function Home({
         setCategory={setCategory}
       />
       <About />
+      <Contact />
     </div>
   );
 }

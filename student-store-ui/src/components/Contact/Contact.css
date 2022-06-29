@@ -1,32 +1,37 @@
-.about {
+.contact {
     margin-top: 50px;
     background-color: #ADF4FF;
     height: 400px;
     display: flex;
+    text-align: end;
     align-items: center;
 }
 
-.about-intro {
+.contact-intro {
     font-size: 40px;
-    margin: auto 0 auto 200px;
+    margin: auto 0 auto 0;
 }
 
-.about-intro h1 {
+.contact-intro h1 {
     margin-bottom: 10px;
 }
 
-.about hr {
+.contact hr {
     width: 180px;
     height: 5px;
     background-color: #292929;
     border: none;
 }
 
-.about-intro span {
+.contact-intro span {
     color: #307580;
 }
 
-.about-intro p{
+.contact-intro p{
     width: 800px;
     font-size: 18px;
+}
+
+.contact-icon {
+    margin-left: 200px;
 }

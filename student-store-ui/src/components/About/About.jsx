@@ -5,7 +5,7 @@ import { FcCustomerSupport } from "react-icons/fc";
 const About = () => {
   return (
     <div className="about" id="about">
-      <div className="intro">
+      <div className="about-intro">
         <h1>
           About <span>Us</span>
         </h1>
