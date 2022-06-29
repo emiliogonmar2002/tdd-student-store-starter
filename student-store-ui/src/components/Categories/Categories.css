@@ -1,6 +1,7 @@
 .categories {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-left: 200px;
     margin-right: 200px;
     margin-bottom: 50px;

@@ -18,7 +18,7 @@ export default function App() {
   const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
 

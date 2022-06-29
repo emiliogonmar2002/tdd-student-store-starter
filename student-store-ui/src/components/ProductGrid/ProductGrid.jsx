@@ -9,6 +9,7 @@ const ProductGrid = ({
   handleAddItemToCart,
   handleRemoveItemFromCart,
   category,
+  shoppingCart,
 }) => {
   return (
     <div className="product-grid" id="Buy">
@@ -30,6 +31,7 @@ const ProductGrid = ({
               showDescription={false}
               handleAddItemToCart={handleAddItemToCart}
               handleRemoveItemFromCart={handleRemoveItemFromCart}
+              shoppingCart={shoppingCart}
             />
           </React.Fragment>
         ))}
