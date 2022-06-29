@@ -10,10 +10,9 @@ export default function Home({
   shoppingCart,
   handleAddItemToCart,
   handleRemoveItemFromCart,
-  handleOnSubmitCheckoutForm,
-  categorie,
-  setCategorie,
-  handleSetCategorie,
+  category,
+  setCategory,
+  handleSetCategory,
   handleOnChangeSearchBar,
   search,
 }) {
@@ -22,8 +21,8 @@ export default function Home({
       <Hero />
       <SearchBar handleOnChangeSearchBar={handleOnChangeSearchBar} />
       <Categories
-        categorie={categorie}
-        handleSetCategorie={handleSetCategorie}
+        category={category}
+        handleSetCategory={handleSetCategory}
         search={search}
       />
       <ProductGrid
@@ -31,8 +30,8 @@ export default function Home({
         shoppingCart={shoppingCart}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}
-        categorie={categorie}
-        setCategorie={setCategorie}
+        category={category}
+        setCategory={setCategory}
       />
     </div>
   );
