@@ -22,6 +22,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
+  const [ordersAPI, setOrdersAPI] = useState([{}]);
 
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({
