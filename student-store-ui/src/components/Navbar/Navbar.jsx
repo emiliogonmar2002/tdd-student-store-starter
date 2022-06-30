@@ -23,6 +23,11 @@ export default function Navbar() {
             Contact
           </HashLink>
         </p>
+        <p>
+          <HashLink className="navbutton" smooth to="/orders">
+            Orders
+          </HashLink>
+        </p>
       </div>
     </nav>
   );

@@ -10,6 +10,7 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import OrdersView from "../OrdersView/OrdersView";
+import OrderDetails from "../OrderDetails/OrderDetails";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
