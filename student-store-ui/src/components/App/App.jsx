@@ -16,6 +16,7 @@ export default function App() {
   const [products, setProducts] = useState([{}]);
   const [productsAPI, setProductsAPI] = useState([{}]);
   const [isFetching, setIsFetching] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
@@ -151,6 +152,10 @@ export default function App() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    loadOrders();
+  }, []);
+
   const loadData = async () => {
     setIsFetching(true);
 
@@ -165,6 +170,23 @@ export default function App() {
     }
 
     setIsFetching(false);
+  };
+
+  const loadOrders = async () => {
+    setLoading(true);
+    try {
+      const data = await axios.get(`${API_URL}/orders`);
+      setLoading(false);
+      if (data.status != 200) {
+        setError(data.statusText);
+      } else {
+        setOrdersAPI(data.data?.orders || []);
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+      setError("Server error");
+    }
   };
 
   return (
@@ -214,7 +236,16 @@ export default function App() {
                     />
                   }
                 />
-                <Route path="/orders" element={<OrdersView />} />
+                <Route
+                  path="/orders"
+                  element={
+                    <OrdersView
+                      ordersAPI={ordersAPI}
+                      setOrdersAPI={setOrdersAPI}
+                      setError={setError}
+                    />
+                  }
+                />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             )}
