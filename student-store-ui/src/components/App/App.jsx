@@ -9,18 +9,22 @@ import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
+import OrdersView from "../OrdersView/OrdersView";
+import OrderDetails from "../OrderDetails/OrderDetails";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
   const [products, setProducts] = useState([{}]);
   const [productsAPI, setProductsAPI] = useState([{}]);
   const [isFetching, setIsFetching] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
+  const [ordersAPI, setOrdersAPI] = useState([{}]);
 
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({
@@ -149,6 +153,10 @@ export default function App() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    loadOrders();
+  }, []);
+
   const loadData = async () => {
     setIsFetching(true);
 
@@ -163,6 +171,23 @@ export default function App() {
     }
 
     setIsFetching(false);
+  };
+
+  const loadOrders = async () => {
+    setLoading(true);
+    try {
+      const data = await axios.get(`${API_URL}/orders`);
+      setLoading(false);
+      if (data.status != 200) {
+        setError(data.statusText);
+      } else {
+        setOrdersAPI(data.data?.orders || []);
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+      setError("Server error");
+    }
   };
 
   return (
@@ -209,6 +234,16 @@ export default function App() {
                       shoppingCart={shoppingCart}
                       handleAddItemToCart={handleAddItemToCart}
                       handleRemoveItemFromCart={handleRemoveItemFromCart}
+                    />
+                  }
+                />
+                <Route
+                  path="/orders"
+                  element={
+                    <OrdersView
+                      ordersAPI={ordersAPI}
+                      setOrdersAPI={setOrdersAPI}
+                      setError={setError}
                     />
                   }
                 />
