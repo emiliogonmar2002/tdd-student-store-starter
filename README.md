@@ -6,6 +6,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 // Include your gif here
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/72105206/176791067-0a5a476f-2607-48eb-87ae-91b64641b40f.gif)
 
 
 ### Application Features
