@@ -1,12 +1,16 @@
 import React from "react";
 import "./OrderCard.css";
+import { Link } from "react-router-dom";
 
-const OrderCard = (order) => {
-  return (
+const OrderCard = ({ order }) => (
+  <Link style={{ textDecoration: "none" }} to={`/orders/${order.id}`}>
+    {console.log(order)}
     <div className="order-card">
-      <h1>{order.order.name}</h1>
+      <h3 className="order-name">{order.name}</h3>
+      <p>{order.email}</p>
+      <p>{`Total: $${order.total.toFixed(2)}`}</p>
     </div>
-  );
-};
+  </Link>
+);
 
 export default OrderCard;
