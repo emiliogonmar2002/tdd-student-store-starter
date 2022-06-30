@@ -6,7 +6,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 // Include your gif here
 
-![final](https://user-images.githubusercontent.com/72105206/175752702-9d02470a-de71-4da2-b949-99968d7243a3.gif)
+![StudentStore](https://user-images.githubusercontent.com/72105206/176787362-2d1565a1-f437-426e-bd19-41dd0a7e4096.gif)
 
 
 ### Application Features
